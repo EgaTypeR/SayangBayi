@@ -1,6 +1,7 @@
-# SayangBayi
-SayangBayi is a desktop-bassed application that help mommy to take care of her baby
+#NAMA APLIKASI
+deskripsi singkat aplikasi
 
-Ketua Kelompok: Antonius Daiva Prabawisesa
-Anggota 1: Ega Rizky Setiawan
-Anggota 2: Nafisa Ramadhania
+NAMA KELOMPOK ANDA
+Ketua Kelompok:
+Anggota 1:
+Anggota 2:
