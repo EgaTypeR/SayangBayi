@@ -4,4 +4,4 @@ Kelompok kami akan membuat aplikasi yang dapat membantu para orang tua yang memi
 KELOMPOK 2
 Ketua Kelompok:Antonius Daiva Prabawisesa
 Anggota 1: Ega Rizky Setiawan
-Anggota 2: Nafisa Ramadhania
+Anggota 2: Nafisa Ramadhania - 21/478543/TK/52731
