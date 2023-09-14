@@ -14,3 +14,4 @@ Gambar Class Diagram <br>
 ![Screenshot 2023-09-14 134419](https://github.com/EgaTypeR/SayangBayi/assets/91113046/fd22b629-2f46-44e7-8fc1-43bea1325a70)
 ![Screenshot 2023-09-14 134428](https://github.com/EgaTypeR/SayangBayi/assets/91113046/b2465dbe-0ba6-4d30-bbe7-905982a87b8f)
 ![Screenshot 2023-09-14 134443](https://github.com/EgaTypeR/SayangBayi/assets/91113046/3952948c-bfdd-43e0-a1f8-2304aa757b4e)
+![image](https://github.com/EgaTypeR/SayangBayi/assets/91113046/60b8dc4e-bdbb-48e3-b1c9-696ec36c7b45)
