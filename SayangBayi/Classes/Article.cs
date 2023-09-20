@@ -13,6 +13,7 @@ namespace SayangBayi.Classes
         private string title;
         private string content;
         private Writer author;
+        public int vote { get; set; };
 
         //properties
         public int ArticleId
