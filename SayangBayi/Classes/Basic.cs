@@ -28,10 +28,10 @@ namespace SayangBayi.Classes
             baby.RecordHeight(newHeight);
         }
 
-        public MealPlan GenerateDailyMealPlan()
+        public Meal GenerateDailyMealPlan()
         {
             // Implementation for generating a daily meal plan
-            return new MealPlan(); // Replace with the actual MealPlan object
+            return new Meal();
         }
     }
 }
