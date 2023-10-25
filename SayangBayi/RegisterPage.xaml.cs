@@ -30,5 +30,11 @@ namespace SayangBayi
             Window window = Window.GetWindow(this);
             window.Content = new LoginPage();
         }
+
+        private void RegisterBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Window window = Window.GetWindow(this);
+            window.Content = new LoginPage();
+        }
     }
 }
