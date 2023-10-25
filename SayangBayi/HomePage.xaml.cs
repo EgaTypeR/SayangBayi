@@ -29,7 +29,6 @@ namespace SayangBayi
         {
 
             var selected = sidebar.SelectedItem as NavButton;
-
             navframe.Navigate(selected.Navlink);
 
         }
