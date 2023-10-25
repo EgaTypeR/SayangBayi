@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="LoginPage">
 
-    <Grid Background="White">
+    <Grid Background="White" >
         <Rectangle HorizontalAlignment="Left" Height="454" Margin="-18,0,0,0" VerticalAlignment="Top" Width="418" Fill="#FFC8E1FF"/>
         <Label Content="Log In" HorizontalAlignment="Left" Margin="544,61,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="36" FontWeight="Bold"/>
         <Label Content="Username :" HorizontalAlignment="Left" Margin="440,181,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="20"/>
