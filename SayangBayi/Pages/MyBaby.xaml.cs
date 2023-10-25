@@ -24,5 +24,16 @@ namespace SayangBayi.Pages
         {
             InitializeComponent();
         }
+        private void BtnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            Window window = Window.GetWindow(this);
+            window.Content = new HomePage();
+        }
+
+        private void BtnSave_Click(object sender, RoutedEventArgs e)
+        {
+            Window window = Window.GetWindow(this);
+            window.Content = new HomePage();
+        }
     }
 }
