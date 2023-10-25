@@ -16,17 +16,21 @@ using System.Windows.Shapes;
 namespace SayangBayi
 {
     /// <summary>
-    /// Interaction logic for MyBabyPage.xaml
+    /// Interaction logic for HomePage.xaml
     /// </summary>
-    public partial class MyBabyPage : Page
+    public partial class HomePage : Page
     {
-        public MyBabyPage()
+        public HomePage()
         {
             InitializeComponent();
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void sidebar_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
+            var selected = sidebar.SelectedItem as NavButton;
+
+            navframe.Navigate(selected.Navlink);
 
         }
     }

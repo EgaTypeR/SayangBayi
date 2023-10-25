@@ -12,7 +12,7 @@
         <Rectangle HorizontalAlignment="Left" Height="454" Margin="-18,0,0,0" VerticalAlignment="Top" Width="418" Fill="#FFC8E1FF"/>
         <Label Content="Baby Data" HorizontalAlignment="Left" Margin="516,36,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="36" FontWeight="Bold"/>
         <Label Content="Weight (kg)" HorizontalAlignment="Left" Margin="443,115,0,0" VerticalAlignment="Top" FontFamily="Century Gothic"/>
-        <TextBox HorizontalAlignment="Left" Margin="448,137,0,0" TextWrapping="Wrap" Text="weight range 1 - 25 kg" VerticalAlignment="Top" Width="304" FontFamily="Century Gothic" FontSize="20" Foreground="Gray"/>
+        <TextBox HorizontalAlignment="Left" Margin="448,137,0,0" TextWrapping="Wrap" Text="weight range 1 - 25 kg" VerticalAlignment="Top" Width="304" FontFamily="Century Gothic" FontSize="20" Foreground="Gray" TextChanged="TextBox_TextChanged"/>
         <Label Content="Height (cm)" HorizontalAlignment="Left" Margin="443,169,0,0" VerticalAlignment="Top" FontFamily="Century Gothic"/>
         <TextBox HorizontalAlignment="Left" Margin="448,191,0,0" TextWrapping="Wrap" Text="height range 1 - 100 cm" VerticalAlignment="Top" Width="304" FontFamily="Century Gothic" FontSize="20" Foreground="Gray" TextChanged="TextBox_TextChanged"/>
         <ComboBox HorizontalAlignment="Left" Margin="448,245,0,0" VerticalAlignment="Top" Width="120"/>

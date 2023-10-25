@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace SayangBayi
 {
     /// <summary>
-    /// Interaction logic for MyBabyPage.xaml
+    /// Interaction logic for ArticlePage.xaml
     /// </summary>
-    public partial class MyBabyPage : Page
+    public partial class ArticlePage : Page
     {
-        public MyBabyPage()
+        public ArticlePage()
         {
             InitializeComponent();
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }

@@ -13,21 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SayangBayi
+namespace SayangBayi.Pages
 {
     /// <summary>
-    /// Interaction logic for MyBabyPage.xaml
+    /// Interaction logic for Article.xaml
     /// </summary>
-    public partial class MyBabyPage : Page
+    public partial class Article : Page
     {
-        public MyBabyPage()
+        public Article()
         {
             InitializeComponent();
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }
