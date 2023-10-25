@@ -23,8 +23,8 @@ namespace SayangBayi
         public MainWindow()
         {
             InitializeComponent();
-            //this.Content = new LoginPage();
-            this.Content = new HomePage();
+            this.Content = new LoginPage();
+            //this.Content = new HomePage();
         }
     }
 }
