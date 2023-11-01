@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SayangBayi.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,16 +26,17 @@ namespace SayangBayi
             InitializeComponent();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void BtnRegHere_Click(object sender, RoutedEventArgs e)
         {
             Window window = Window.GetWindow(this);
             window.Content = new RegisterPage();
         }
 
-        private void Login_Click(object sender, RoutedEventArgs e)
+        private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
             Window window = Window.GetWindow(this);
             window.Content = new HomePage();
         }
+
     }
 }
