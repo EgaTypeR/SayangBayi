@@ -8,15 +8,15 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="LoginPage">
 
-    <Grid Background="White" >
+    <Grid Background="White">
         <Rectangle HorizontalAlignment="Left" Height="454" Margin="-18,0,0,0" VerticalAlignment="Top" Width="418" Fill="#FFC8E1FF"/>
         <Label Content="Log In" HorizontalAlignment="Left" Margin="544,61,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="36" FontWeight="Bold"/>
         <Label Content="Username :" HorizontalAlignment="Left" Margin="440,181,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="20"/>
         <Label Content="Password  :" HorizontalAlignment="Left" Margin="440,235,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="20"/>
-        <TextBox HorizontalAlignment="Left" Margin="564,187,0,0" TextWrapping="Wrap" Text="username" VerticalAlignment="Top" Width="186" FontFamily="Century Gothic" FontSize="20" Grid.ColumnSpan="2" Foreground="Gray"/>
-        <TextBox HorizontalAlignment="Left" Margin="564,242,0,0" TextWrapping="Wrap" Text="password" VerticalAlignment="Top" Width="186" FontFamily="Century Gothic" FontSize="20" Grid.ColumnSpan="2" Foreground="Gray"/>
-        <Button x:Name="LoginBtn" Content="Login" HorizontalAlignment="Left" Margin="440,297,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="20" Width="310" Foreground="White" Background="#FF0074FF" BorderBrush="#FFD1D1D1" Height="41" Grid.ColumnSpan="2" Click="Login_Click"/>
+        <TextBox HorizontalAlignment="Left" Margin="564,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" FontFamily="Century Gothic" FontSize="20" Grid.ColumnSpan="2" Foreground="Gray"/>
+        <TextBox HorizontalAlignment="Left" Margin="564,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" FontFamily="Century Gothic" FontSize="20" Grid.ColumnSpan="2" Foreground="Gray"/>
+        <Button Content="Login" HorizontalAlignment="Left" Margin="440,297,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="20" Width="310" Foreground="White" Background="#FF0074FF" BorderBrush="#FFD1D1D1" Height="41" Grid.ColumnSpan="2" Click="BtnLogin_Click"/>
         <Label Content="Don't have an account?" HorizontalAlignment="Left" Margin="476,389,0,0" VerticalAlignment="Top" Width="155" FontFamily="Century Gothic"/>
-        <Button x:Name="GoToRegister" Content="Register here" HorizontalAlignment="Left" Margin="624,392,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" Foreground="#FF0074FF" FontWeight="Bold" Background="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click_1"/>
+        <Button Content="Register here" HorizontalAlignment="Left" Margin="624,392,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" Foreground="#FF0074FF" FontWeight="Bold" Background="{x:Null}" BorderBrush="{x:Null}" Click="BtnRegHere_Click"/>
     </Grid>
 </Page>
