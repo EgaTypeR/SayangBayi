@@ -25,16 +25,16 @@ namespace SayangBayi
             InitializeComponent();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void BtnLoginHere_Click(object sender, RoutedEventArgs e)
         {
             Window window = Window.GetWindow(this);
             window.Content = new LoginPage();
         }
 
-        private void RegisterBtn_Click(object sender, RoutedEventArgs e)
+        private void BtnReg_Click(object sender, RoutedEventArgs e)
         {
             Window window = Window.GetWindow(this);
-            window.Content = new LoginPage();
+            window.Content = new HomePage();
         }
     }
 }

@@ -25,6 +25,10 @@
             <TextBox HorizontalAlignment="Left" Margin="180,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" FontSize="20" FontFamily="Century Gothic"/>
             <Label Content="Name" HorizontalAlignment="Left" Margin="64,94,0,0" VerticalAlignment="Top" Foreground="Black" FontFamily="Century Gothic"/>
             <TextBox HorizontalAlignment="Left" Margin="180,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" FontSize="20"/>
+            <Label Content="month" HorizontalAlignment="Left" Margin="339,132,0,0" VerticalAlignment="Top" FontFamily="Century Gothic"/>
+            <Label Content="kg" HorizontalAlignment="Left" Margin="339,172,0,0" VerticalAlignment="Top" FontFamily="Century Gothic"/>
+            <Label Content="cm" HorizontalAlignment="Left" Margin="339,212,0,0" VerticalAlignment="Top" FontFamily="Century Gothic"/>
+            <Label Content="hour" HorizontalAlignment="Left" Margin="339,252,0,0" VerticalAlignment="Top" FontFamily="Century Gothic"/>
         </Grid>
     </Viewbox>
 
