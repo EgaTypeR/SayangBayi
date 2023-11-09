@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Npgsql;
 using System.Data;
+using System.Configuration;
 
 namespace SayangBayi
 {
@@ -29,9 +30,10 @@ namespace SayangBayi
         }
 
         private NpgsqlConnection conn;
-        string connstring = "Host=localhost;Port=5432;Username=postgres;Password=gajah;Database=sayangbayi";
+        string connstring = ConfigurationManager.ConnectionStrings["MyDbConnection"].ConnectionString;
         public static NpgsqlCommand cmd;
         private string sql = null;
+
 
         private bool Verify(string username, string password)
         {

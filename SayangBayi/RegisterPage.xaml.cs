@@ -1,6 +1,8 @@
 ﻿using Npgsql;
+using SayangBayi.Classes;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,7 +30,7 @@ namespace SayangBayi
         }
 
         private NpgsqlConnection conn;
-        string connstring = "Host=localhost;Port=5432;Username=postgres;Password=gajah;Database=sayangbayi";
+        string connstring = ConfigurationManager.ConnectionStrings["MyDbConnection"].ConnectionString;
         public static NpgsqlCommand cmd;
         private string sql = null;
 
@@ -58,15 +60,18 @@ namespace SayangBayi
             }
         }
 
-        private void Register(string email, string username, string name, string password)
+        /*private void Register(string email, string username, string name, string password)
         {
+            string role = "user";
+            User newUser = new User(username, password, email, role);
+
             try
             {
                 conn.Open();
                 string sql = "INSERT INTO users (email, username, name, user_pass, user_role) VALUES (@email, @username, @name, @password, 'user')";
                 cmd = new NpgsqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@email", email);
-                cmd.Parameters.AddWithValue("@username", username);
+                cmd.Parameters.AddWithValue("@email", newUser.userId);
+                cmd.Parameters.AddWithValue("@username", newUser.);
                 cmd.Parameters.AddWithValue("@name", name);
                 cmd.Parameters.AddWithValue("@password", password);
 
@@ -79,7 +84,7 @@ namespace SayangBayi
                 MessageBox.Show(ex.Message);
                 conn.Close();
             }
-        }
+        }*/
 
 
 
@@ -114,8 +119,7 @@ namespace SayangBayi
                 return;
             }
 
-            Register(emailTBox.Text, usernameTBox.Text, nameTBox.Text, passwordTBox.Text);
-
+            User regisrerUser = User.Register(emailTBox.Text, usernameTBox.Text, nameTBox.Text, passwordTBox.Text);
             Window window = Window.GetWindow(this);
             window.Content = new LoginPage();
         }
