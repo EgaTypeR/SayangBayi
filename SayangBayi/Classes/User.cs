@@ -14,12 +14,14 @@ namespace SayangBayi.Classes
     internal class User
     {
         public int userId { get; set; }
-        private string username { get; set; }
-        private string password { get; set; }
-        private string email { get; set; }
+        protected string username { get; set; }
+        protected string name { get; set; }
+        protected string password { get; set; }
+        protected string email { get; set; }
         // Constructor
         public User(string email, string username, string name, string password)
         {
+            this.name = name;
             this.username = username;
             this.password = password;
             this.email = email;
@@ -36,10 +38,11 @@ namespace SayangBayi.Classes
         {
             this.password = newPassword;
         }
-        public static User Register(string email, string username, string name, string password, string role = "user")
+        public virtual void Register()
         {
-            User newUser = new User(email, username, name, password);
+            
             DbConnection connection = new DbConnection();
+
 
             try
             {
@@ -48,10 +51,10 @@ namespace SayangBayi.Classes
                 using (NpgsqlCommand cmd = new NpgsqlCommand("INSERT INTO users (email, username, name, user_pass, user_role) VALUES (@email, @username, @name, @password, 'user')", connection.GetConnection()))
                 {
                     // Provide values for the parameters
-                    cmd.Parameters.AddWithValue("@email", newUser.email);
-                    cmd.Parameters.AddWithValue("@username", newUser.username);
-                    cmd.Parameters.AddWithValue("@name", name);
-                    cmd.Parameters.AddWithValue("@password", newUser.password);
+                    cmd.Parameters.AddWithValue("@email", this.email);
+                    cmd.Parameters.AddWithValue("@username", this.username);
+                    cmd.Parameters.AddWithValue("@name", this.name);
+                    cmd.Parameters.AddWithValue("@password", this.password);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -64,7 +67,6 @@ namespace SayangBayi.Classes
             {
                 connection.CloseConnection();
             }
-            return newUser;
         }
 
     }

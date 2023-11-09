@@ -119,7 +119,9 @@ namespace SayangBayi
                 return;
             }
 
-            User regisrerUser = User.Register(emailTBox.Text, usernameTBox.Text, nameTBox.Text, passwordTBox.Text);
+            User user1 = new User(emailTBox.Text, usernameTBox.Text, nameTBox.Text, passwordTBox.Text);
+            user1.Register();
+
             Window window = Window.GetWindow(this);
             window.Content = new LoginPage();
         }
