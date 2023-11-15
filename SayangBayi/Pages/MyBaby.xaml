@@ -11,20 +11,20 @@
     <Viewbox>
         <Grid Background="White">
             <Label Content="Weight" HorizontalAlignment="Left" Margin="65,172,0,0" VerticalAlignment="Top" FontFamily="Century Gothic"/>
-            <TextBox HorizontalAlignment="Left" Margin="180,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" FontFamily="Century Gothic" FontSize="20" Foreground="Gray"/>
+            <TextBox x:Name="tbWeight" HorizontalAlignment="Left" Margin="180,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" FontFamily="Century Gothic" FontSize="20" Foreground="Gray"/>
             <Label Content="Height" HorizontalAlignment="Left" Margin="68,211,0,0" VerticalAlignment="Top" FontFamily="Century Gothic"/>
-            <TextBox HorizontalAlignment="Left" Margin="180,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" FontFamily="Century Gothic" FontSize="20" Foreground="Gray"/>
+            <TextBox x:Name="tbHeight" HorizontalAlignment="Left" Margin="180,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" FontFamily="Century Gothic" FontSize="20" Foreground="Gray"/>
             <Label Content="Age" HorizontalAlignment="Left" Margin="65,132,0,0" VerticalAlignment="Top" Foreground="Black" FontFamily="Century Gothic"/>
             <Label Content="Sex" HorizontalAlignment="Left" Margin="68,285,0,0" VerticalAlignment="Top" FontFamily="Century Gothic"/>
-            <RadioButton Content="Boy" HorizontalAlignment="Left" Margin="180,290,0,0" VerticalAlignment="Top" FontFamily="Century Gothic"/>
-            <RadioButton Content="Girl" HorizontalAlignment="Left" Margin="228,290,0,0" VerticalAlignment="Top" FontFamily="Century Gothic"/>
+            <RadioButton x:Name="rbBoy" Content="Boy" HorizontalAlignment="Left" Margin="180,290,0,0" VerticalAlignment="Top" FontFamily="Century Gothic"/>
+            <RadioButton x:Name="rbGirl" Content="Girl" HorizontalAlignment="Left" Margin="228,290,0,0" VerticalAlignment="Top" FontFamily="Century Gothic"/>
             <Button Content="Save" Margin="575,332,57,19" FontFamily="Century Gothic" FontSize="20" Foreground="White" Background="#FF222222" BorderBrush="#FFD1D1D1" Click="BtnSave_Click"/>
             <Button Content="Cancel" Margin="485,332,154,19" FontFamily="Century Gothic" FontSize="20" Foreground="#FF222222" Background="White" BorderBrush="#FF222222" Click="BtnCancel_Click"/>
-            <TextBox HorizontalAlignment="Left" Margin="180,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" FontSize="20"/>
+            <TextBox x:Name="tbAge" HorizontalAlignment="Left" Margin="180,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" FontSize="20"/>
             <Label Content="Sleep Time" HorizontalAlignment="Left" Margin="68,251,0,0" VerticalAlignment="Top" FontFamily="Century Gothic"/>
-            <TextBox HorizontalAlignment="Left" Margin="180,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" FontSize="20" FontFamily="Century Gothic"/>
+            <TextBox x:Name="tbSleepTime" HorizontalAlignment="Left" Margin="180,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" FontSize="20" FontFamily="Century Gothic"/>
             <Label Content="Name" HorizontalAlignment="Left" Margin="64,94,0,0" VerticalAlignment="Top" Foreground="Black" FontFamily="Century Gothic"/>
-            <TextBox HorizontalAlignment="Left" Margin="180,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" FontSize="20"/>
+            <TextBox x:Name="tbBabyName" HorizontalAlignment="Left" Margin="180,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" FontSize="20"/>
             <Label Content="month" HorizontalAlignment="Left" Margin="339,132,0,0" VerticalAlignment="Top" FontFamily="Century Gothic"/>
             <Label Content="kg" HorizontalAlignment="Left" Margin="339,172,0,0" VerticalAlignment="Top" FontFamily="Century Gothic"/>
             <Label Content="cm" HorizontalAlignment="Left" Margin="339,212,0,0" VerticalAlignment="Top" FontFamily="Century Gothic"/>
