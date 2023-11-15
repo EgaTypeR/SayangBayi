@@ -71,6 +71,18 @@ namespace SayangBayi.Classes
         //{
             //codes
         //}
+
+        //constructor
+        public Baby(string username, int age, double weight, double height, double sleep_time)
+        {
+            this.username = username;
+            this.age = age;
+            this.weight = weight;
+            this.height = height;
+            this.sleep_time = sleep_time;
+
+        }
+
         public bool UpdateBaby()
         {
             DbConnection connection = new DbConnection();
