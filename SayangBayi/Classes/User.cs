@@ -32,6 +32,11 @@ namespace SayangBayi.Classes
             this.password = password;
         }
 
+        public User()
+        {
+            this.userId = 2;
+        }
+
         //method
         public void EditProfile(string newUsername, string newEmail)
         {
@@ -99,7 +104,7 @@ namespace SayangBayi.Classes
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 return false;
@@ -109,6 +114,81 @@ namespace SayangBayi.Classes
                 connection.CloseConnection();
             }
         }
+
+        /*public User Login()
+        {
+            DbConnection connection = new DbConnection();
+            try
+            {
+                connection.OpenConnection();
+                using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM users WHERE username = @username AND user_pass = @password", connection.GetConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@username", this.username);
+                    cmd.Parameters.AddWithValue("@password", this.password);
+
+                    using (NpgsqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Login successful, retrieve user data
+                            User user = new User
+                            {
+                                thi = Convert.ToInt32(reader["user_id"]),
+                                Username = reader["username"].ToString(),
+                                // Add other properties as needed
+                            };
+
+                            return user;
+                        }
+                        else
+                        {
+                            // Login failed
+                            return null;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+            finally
+            {
+                connection.CloseConnection();
+            }
+        }*/
+
+
+        /*public void GetUser(string username, string password)
+        {
+            DbConnection connection = new DbConnection();
+            try
+            {
+                connection.OpenConnection();
+                using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM users WHERE username = @user_id", connection.GetConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@user_id", user.userId);
+
+                    using (NpgsqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Populate the Baby object with data from the database
+                            this.babyId = Convert.ToInt32(reader["baby_id"]);
+                            this.username = reader["username"].ToString();
+                            this.age = Convert.ToInt32(reader["age"]);
+                            this.weight = Convert.ToDouble(reader["weight"]);
+                            this.height = Convert.ToDouble(reader["height"]);
+                            this.sleep_time = Convert.ToDouble(reader["sleep_time"]);
+                            //baby.sex = reader["sex"].ToString();
+
+                            // Add other properties as needed
+                        }
+                    }
+                }
+            }
+        }*/
 
     }
 }

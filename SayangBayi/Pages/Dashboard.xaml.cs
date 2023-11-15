@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SayangBayi.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,26 @@ namespace SayangBayi.Pages
         public Dashboard()
         {
             InitializeComponent();
+            ShowBaby();
+        }
+
+        public void ShowBaby()
+        {
+            User user = new User();
+            Baby baby = new Baby();
+            try
+            {
+                baby.GetBaby(user);
+                lblName.Content = baby.Username.ToString();
+                lblAge.Content = baby.Age.ToString();
+                lblHeight.Content = baby.Height.ToString();
+                lblWeight.Content = baby.Weight.ToString();
+                lblSleepTime.Content = baby.SleepTime.ToString();
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
     }
 }

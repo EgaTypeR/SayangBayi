@@ -16,7 +16,7 @@ namespace SayangBayi.Classes
         private int age;
         private double weight;
         private double height;
-        private int sleep_time;
+        private double sleep_time;
         private string sex;
 
         //properties
@@ -46,7 +46,7 @@ namespace SayangBayi.Classes
             get { return height; }
         }
 
-        public int SleepTime
+        public double SleepTime
         {
             get { return sleep_time; }
         }
@@ -102,34 +102,39 @@ namespace SayangBayi.Classes
                 connection.CloseConnection();
             }
         }
-
-        public Baby GetBaby(User user)
+        public Baby()
         {
-            Baby baby = new Baby();
-            
+            this.username = "";
+            this.age = 0;
+            this.weight = 0;
+            this.height = 0;
+            this.sleep_time = 0;
+            this.sex = "unknown";
+    }
+        public void GetBaby(User user)
+        {          
             DbConnection connection = new DbConnection();
             try
             {
                 connection.OpenConnection();
                 using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM baby WHERE user_id = @user_id", connection.GetConnection()))
                 {
-                    cmd.Parameters.AddWithValue("@user_id", 4 /*user.userId*/);
+                    cmd.Parameters.AddWithValue("@user_id", user.userId);
 
                     using (NpgsqlDataReader reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
                         {
                             // Populate the Baby object with data from the database
-                            baby.babyId = Convert.ToInt32(reader["id"]);
-                            baby.username = reader["name"].ToString();
-                            baby.age = Convert.ToInt32(reader["age"]);
-                            baby.weight = Convert.ToDouble(reader["weight"]);
-                            baby.height = Convert.ToDouble(reader["height"]);
-                            baby.sex = reader["sex"].ToString();
+                            this.babyId = Convert.ToInt32(reader["baby_id"]);
+                            this.username = reader["username"].ToString();
+                            this.age = Convert.ToInt32(reader["age"]);
+                            this.weight = Convert.ToDouble(reader["weight"]);
+                            this.height = Convert.ToDouble(reader["height"]);
+                            this.sleep_time = Convert.ToDouble(reader["sleep_time"]);
+                            //baby.sex = reader["sex"].ToString();
 
                             // Add other properties as needed
-
-                            return baby;
                         }
                     }
                 }
@@ -143,7 +148,6 @@ namespace SayangBayi.Classes
             {
                 connection.CloseConnection();
             }
-            return null;
         }
     }
 }
