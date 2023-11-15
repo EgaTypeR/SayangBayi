@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Npgsql;
+using SayangBayi.Classes;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +26,41 @@ namespace SayangBayi.Pages
         public Meal()
         {
             InitializeComponent();
+            populateDataGrid();
+        }
+
+        private void populateDataGrid()
+        {
+            DbConnection connection = new DbConnection();
+
+
+
+            try
+            {
+                connection.OpenConnection();
+
+                using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM meal", connection.GetConnection()))
+                {
+                    using (NpgsqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        DataTable dataTable = new DataTable();
+
+                        // Load the reader into the DataTable
+                        dataTable.Load(reader);
+
+                        // Assuming DGArticle is the name of your DataGrid
+                        DGMeal.ItemsSource = dataTable.DefaultView;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.CloseConnection();
+            }
         }
     }
 }

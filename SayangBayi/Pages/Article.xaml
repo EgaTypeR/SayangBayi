@@ -10,16 +10,9 @@
     <Viewbox>
         <Grid Background="White">
             <Label Content="Articles" FontWeight="Bold" Margin="28,10,250,157" FontSize="16"/>
-            <DataGrid ItemsSource="{Binding Articles}" AutoGenerateColumns="False" Margin="0,46,0,0">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
-                    <DataGridTextColumn Header="Title" Binding="{Binding Title}" />
-                    <DataGridTextColumn Header="Content" Binding="{Binding Content}" />
-                    <DataGridTextColumn Header="Date" Binding="{Binding Date}" />
-                </DataGrid.Columns>
-            </DataGrid>
+            <DataGrid x:Name="DGArticle" d:ItemsSource="{d:SampleData ItemCount=5}" HorizontalAlignment="Left" Width="292" Height="127" VerticalAlignment="Top" Margin="28,46,0,0"/>
 
         </Grid>
     </Viewbox>
-    
+
 </Page>
