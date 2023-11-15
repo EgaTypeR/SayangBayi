@@ -10,9 +10,9 @@
     <Viewbox>
         <Grid Background="White">
             <Label Content="Articles" FontWeight="Bold" Margin="28,10,250,157" FontSize="16"/>
-            <ListBox HorizontalAlignment="Left" Height="126" Margin="28,46,0,0" VerticalAlignment="Top" Width="286" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+            <DataGrid x:Name="DGArticle" d:ItemsSource="{d:SampleData ItemCount=5}" HorizontalAlignment="Left" Width="292" Height="127" VerticalAlignment="Top" Margin="28,46,0,0"/>
 
         </Grid>
     </Viewbox>
-    
+
 </Page>
