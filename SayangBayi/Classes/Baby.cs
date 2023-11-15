@@ -36,12 +36,12 @@ namespace SayangBayi.Classes
             get { return age; }
         }
 
-        public int Weight
+        public double Weight
         {
             get { return weight; }
         }
 
-        public int Height
+        public double Height
         {
             get { return height; }
         }
