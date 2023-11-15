@@ -77,12 +77,6 @@ namespace SayangBayi
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
             User userLogin = new User(usernameTBox.Text, passwordTBox.Text);
-            /*if (userLogin.Login())
-            {
-                Window window = Window.GetWindow(this);
-                window.Content = new HomePage();
-            }
-            else { MessageBox.Show("Incorrect Username or Password"); }*/
 
             try
             {
