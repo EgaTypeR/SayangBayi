@@ -12,11 +12,7 @@
     <Viewbox>
         <Grid Background="White">
             <Label Content="Meals" FontWeight="Bold" Margin="28,10,250,157" FontSize="16"/>
-            <ListBox HorizontalAlignment="Left" Height="126" Margin="28,46,0,0" VerticalAlignment="Top" Width="286">
-                <ListBox.ItemsSource>
-                    <Collections:ArrayList/>
-                </ListBox.ItemsSource>
-            </ListBox>
+            <DataGrid x:Name="DGMeal" d:ItemsSource="{d:SampleData ItemCount=5}" HorizontalAlignment="Center" Width="277" Height="134" VerticalAlignment="Top" Margin="0,41,0,0"/>
 
         </Grid>
     </Viewbox>
