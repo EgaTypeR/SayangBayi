@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using Npgsql;
 using System.Data;
 using System.Configuration;
+using SayangBayi.Classes;
 
 namespace SayangBayi
 {
@@ -75,14 +76,31 @@ namespace SayangBayi
 
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
-            string username = usernameTBox.Text;
-            string password = passwordTBox.Text;
-            if (Verify(username, password))
+            User userLogin = new User(usernameTBox.Text, passwordTBox.Text);
+            /*if (userLogin.Login())
             {
                 Window window = Window.GetWindow(this);
                 window.Content = new HomePage();
             }
-            else { MessageBox.Show("Incorrect Username or Password"); }
+            else { MessageBox.Show("Incorrect Username or Password"); }*/
+
+            try
+            {
+                if (userLogin.Login())
+                {
+                    MessageBox.Show("Login Sucessfully");
+                    Window window = Window.GetWindow(this);
+                    window.Content = new HomePage();
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect Username or Password");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
             //klo mau skip login funct
             //Window window = Window.GetWindow(this);

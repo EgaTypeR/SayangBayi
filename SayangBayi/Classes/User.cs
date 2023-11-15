@@ -26,6 +26,11 @@ namespace SayangBayi.Classes
             this.password = password;
             this.email = email;
         }
+        public User(string username, string password)
+        {
+            this.username = username;
+            this.password = password;
+        }
 
         //method
         public void EditProfile(string newUsername, string newEmail)
@@ -62,6 +67,42 @@ namespace SayangBayi.Classes
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.CloseConnection();
+            }
+        }
+
+        public bool Login()
+        {
+            DbConnection connection = new DbConnection();
+            try
+            {
+                connection.OpenConnection();
+                using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT COUNT(*) FROM users WHERE username= @username AND user_pass= @password", connection.GetConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@username", this.username);
+                    cmd.Parameters.AddWithValue("@password", this.password);
+
+                    int userCount = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    if (userCount > 0)
+                    {
+                        // Login successful
+                        return true;
+                    }
+                    else
+                    {
+                        // Login failed
+                        return false;
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
             }
             finally
             {

@@ -60,34 +60,6 @@ namespace SayangBayi
             }
         }
 
-        /*private void Register(string email, string username, string name, string password)
-        {
-            string role = "user";
-            User newUser = new User(username, password, email, role);
-
-            try
-            {
-                conn.Open();
-                string sql = "INSERT INTO users (email, username, name, user_pass, user_role) VALUES (@email, @username, @name, @password, 'user')";
-                cmd = new NpgsqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@email", newUser.userId);
-                cmd.Parameters.AddWithValue("@username", newUser.);
-                cmd.Parameters.AddWithValue("@name", name);
-                cmd.Parameters.AddWithValue("@password", password);
-
-                cmd.ExecuteNonQuery();
-
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                conn.Close();
-            }
-        }*/
-
-
-
         private void BtnLoginHere_Click(object sender, RoutedEventArgs e)
         {
             Window window = Window.GetWindow(this);
@@ -118,12 +90,21 @@ namespace SayangBayi
                 MessageBox.Show("email already used");
                 return;
             }
-
             User user1 = new User(emailTBox.Text, usernameTBox.Text, nameTBox.Text, passwordTBox.Text);
-            user1.Register();
+            try
+            {
+                user1.Register();
+                MessageBox.Show("Registration successful");
+                Window window = Window.GetWindow(this);
+                window.Content = new LoginPage();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Registration failed: {ex.Message}");
+            }
+            
 
-            Window window = Window.GetWindow(this);
-            window.Content = new LoginPage();
+            
         }
     }
 }
