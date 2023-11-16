@@ -24,7 +24,6 @@ namespace SayangBayi.Pages
         public MyBaby()
         {
             InitializeComponent();
-            instance = this;
         }
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {
