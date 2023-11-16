@@ -34,21 +34,25 @@ namespace SayangBayi.Classes
         public int Age
         {
             get { return age; }
+            set { age = value; }
         }
 
         public double Weight
         {
             get { return weight; }
+            set { weight = value; }
         }
 
         public double Height
         {
             get { return height; }
+            set { height = value; }
         }
 
         public double SleepTime
         {
             get { return sleep_time; }
+            set { sleep_time = value; }
         }
 
         //methods

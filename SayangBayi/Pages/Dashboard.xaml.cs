@@ -25,6 +25,8 @@ namespace SayangBayi.Pages
         {
             InitializeComponent();
             ShowBaby();
+
+            instance = this;
         }
 
         public void ShowBaby()
