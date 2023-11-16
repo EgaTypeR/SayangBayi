@@ -100,6 +100,5 @@ namespace SayangBayi
             //Window window = Window.GetWindow(this);
             //window.Content = new HomePage();
         }
-
     }
 }

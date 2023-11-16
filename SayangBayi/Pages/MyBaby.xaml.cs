@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SayangBayi.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,8 +33,43 @@ namespace SayangBayi.Pages
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
-            Window window = Window.GetWindow(this);
-            window.Content = new HomePage();
+            //check textbox if empty
+            bool anyEmpty = false;
+            foreach (var textBox in new[] { tbBabyName, tbAge, tbHeight, tbWeight, tbSleepTime })
+            {
+                if (string.IsNullOrEmpty(textBox.Text))
+                {
+                    anyEmpty = true;
+                    break; // Break the loop if any textbox is found empty
+                }
+            }
+
+            if (anyEmpty)
+            {
+                MessageBox.Show("Please Fill Each Field");
+                return;
+            }
+
+            try
+            {
+                Baby baby = new Baby();
+                // Populate the Baby object with textbox values
+                baby.Username = tbBabyName.Text;
+                baby.Age = int.Parse(tbAge.Text);
+                baby.Height = double.Parse(tbHeight.Text); 
+                baby.Weight = double.Parse(tbWeight.Text); 
+                baby.SleepTime = double.Parse(tbSleepTime.Text); 
+
+                baby.UpdateBaby();
+
+                MessageBox.Show("Update successful");
+                Window window = Window.GetWindow(this);
+                window.Content = new Dashboard();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Update failed: {ex.Message}");
+            }
         }
     }
 }
