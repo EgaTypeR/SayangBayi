@@ -62,12 +62,6 @@ namespace SayangBayi
             }
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Window window = Window.GetWindow(this);
-            window.Content = new RegisterPage();
-        }
-
         private void BtnRegHere_Click(object sender, RoutedEventArgs e)
         {
             Window window = Window.GetWindow(this);
@@ -82,6 +76,7 @@ namespace SayangBayi
             {
                 if (userLogin.Login())
                 {
+                    UserContext.LoggedInUser = userLogin;
                     MessageBox.Show("Login Sucessfully");
                     Window window = Window.GetWindow(this);
                     window.Content = new HomePage();

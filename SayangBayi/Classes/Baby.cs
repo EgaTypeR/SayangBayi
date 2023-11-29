@@ -18,9 +18,10 @@ namespace SayangBayi.Classes
         private double height;
         private double sleep_time;
         private string sex;
+        private int userId;
 
         //properties
-        public int BabyID
+        public int babyID
         {
             get { return babyId; }
         }
@@ -55,6 +56,18 @@ namespace SayangBayi.Classes
             set { sleep_time = value; }
         }
 
+        public string Sex
+        {
+            get { return sex; }
+            set { sex = value; }
+        }
+
+        public int UserId
+        {
+            get { return userId; }
+            set { userId = value; }
+        }
+
         //methods
         public void RecordWeight(int newWeight)
         {
@@ -87,21 +100,22 @@ namespace SayangBayi.Classes
 
         }
 
-        public bool UpdateBaby()
+        public bool CreateBaby(User user)
         {
             DbConnection connection = new DbConnection();
             try
             {
                 connection.OpenConnection();
-                using (NpgsqlCommand cmd = new NpgsqlCommand("INSERT INTO baby (username, age, weight, height, sleep_time, sex) VALUES (@username, @age, @weight, @height, @sleep_time, @sex)", connection.GetConnection()))
+                using (NpgsqlCommand cmd = new NpgsqlCommand("INSERT INTO baby (username, age, weight, height, sleep_time, sex, user_id) VALUES (@username, @age, @weight, @height, @sleep_time, @sex, @userId)", connection.GetConnection()))
                 {
                     // Provide values for the parameters
                     cmd.Parameters.AddWithValue("@username", this.username);
-                    cmd.Parameters.AddWithValue("@age", this.username);
+                    cmd.Parameters.AddWithValue("@age", this.age);
                     cmd.Parameters.AddWithValue("@weight", this.weight);
                     cmd.Parameters.AddWithValue("@height", this.height);
                     cmd.Parameters.AddWithValue("@sleep_time", this.sleep_time);
                     cmd.Parameters.AddWithValue("@sex", this.sex);
+                    cmd.Parameters.AddWithValue("@userId", this.userId);
 
                     cmd.ExecuteNonQuery();
                     return true;
@@ -118,14 +132,47 @@ namespace SayangBayi.Classes
                 connection.CloseConnection();
             }
         }
+
+        public void UpdateBaby()
+        {
+            DbConnection connection = new DbConnection();
+            try
+            {
+                connection.OpenConnection();
+
+                // Baby exists, update the existing one
+                using (NpgsqlCommand cmd = new NpgsqlCommand("UPDATE baby SET username = @username, age = @age, weight = @weight, height = @height, sleep_time = @sleep_time, sex = @sex WHERE user_id = @userId", connection.GetConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@username", this.username);
+                    cmd.Parameters.AddWithValue("@age", this.age);
+                    cmd.Parameters.AddWithValue("@weight", this.weight);
+                    cmd.Parameters.AddWithValue("@height", this.height);
+                    cmd.Parameters.AddWithValue("@sleep_time", this.sleep_time);
+                    cmd.Parameters.AddWithValue("@sex", this.sex);
+                    cmd.Parameters.AddWithValue("@userId", this.userId);
+                    cmd.ExecuteNonQuery();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.CloseConnection();
+            }
+        }
+
         public Baby()
         {
-            this.username = "";
+            this.babyId = 0;
+            this.username = "My Baby";
             this.age = 0;
             this.weight = 0;
             this.height = 0;
             this.sleep_time = 0;
-            this.sex = "unknown";
+            this.sex = "";
     }
         public void GetBaby(User user)
         {          
@@ -136,7 +183,6 @@ namespace SayangBayi.Classes
                 using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM baby WHERE user_id = @user_id", connection.GetConnection()))
                 {
                     cmd.Parameters.AddWithValue("@user_id", user.userId);
-
                     using (NpgsqlDataReader reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
@@ -148,8 +194,8 @@ namespace SayangBayi.Classes
                             this.weight = Convert.ToDouble(reader["weight"]);
                             this.height = Convert.ToDouble(reader["height"]);
                             this.sleep_time = Convert.ToDouble(reader["sleep_time"]);
-                            //baby.sex = reader["sex"].ToString();
-
+                            this.sex = reader["sex"].ToString();
+                            this.userId = Convert.ToInt32(reader["user_id"]);
                             // Add other properties as needed
                         }
                     }

@@ -10,7 +10,7 @@
     <Viewbox>
         <Grid Background="White">
             <Label Content="Articles" FontWeight="Bold" Margin="28,10,250,157" FontSize="16"/>
-            <DataGrid x:Name="DGArticle" d:ItemsSource="{d:SampleData ItemCount=5}" HorizontalAlignment="Left" Width="292" Height="127" VerticalAlignment="Top" Margin="28,46,0,0"/>
+            <DataGrid x:Name="DGArticle" d:ItemsSource="{d:SampleData ItemCount=5}" HorizontalAlignment="Left" Width="292" Height="127" VerticalAlignment="Top" Margin="28,46,0,0" SelectionMode="Single"/>
 
         </Grid>
     </Viewbox>

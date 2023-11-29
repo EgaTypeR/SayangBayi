@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SayangBayi.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,14 +24,16 @@ namespace SayangBayi
         public HomePage()
         {
             InitializeComponent();
+
+            // Access the logged-in user
+            User loggedInUser = UserContext.LoggedInUser;
         }
+
 
         private void sidebar_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
             var selected = sidebar.SelectedItem as NavButton;
             navframe.Navigate(selected.Navlink);
-
         }
     }
 }
