@@ -29,7 +29,7 @@ namespace SayangBayi.Pages
 
         public void ShowBaby()
         {
-            User user = new User();
+            User user = UserContext.LoggedInUser;
             Baby baby = new Baby();
             try
             {
@@ -44,6 +44,6 @@ namespace SayangBayi.Pages
             {
 
             }
-        }
+        } 
     }
 }

@@ -33,6 +33,9 @@ namespace SayangBayi.Pages
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
+            //get logged in user
+            User user = UserContext.LoggedInUser;
+
             //check textbox if empty
             bool anyEmpty = false;
             foreach (var textBox in new[] { tbBabyName, tbAge, tbHeight, tbWeight, tbSleepTime })
@@ -53,18 +56,31 @@ namespace SayangBayi.Pages
             try
             {
                 Baby baby = new Baby();
+                Baby check = new Baby();
+                check.GetBaby(user);
                 // Populate the Baby object with textbox values
                 baby.Username = tbBabyName.Text;
                 baby.Age = int.Parse(tbAge.Text);
                 baby.Height = double.Parse(tbHeight.Text); 
                 baby.Weight = double.Parse(tbWeight.Text); 
-                baby.SleepTime = double.Parse(tbSleepTime.Text); 
-
-                baby.UpdateBaby();
+                baby.SleepTime = double.Parse(tbSleepTime.Text);
+                baby.UserId = user.userId;
+                //default sex
+                baby.Sex = "Boy";
+                
+                if (check.UserId != 0)
+                {
+                    baby.CreateBaby(user);
+                }
+                else
+                {
+                    baby.UpdateBaby();
+                }
+                
 
                 MessageBox.Show("Update successful");
                 Window window = Window.GetWindow(this);
-                window.Content = new Dashboard();
+                window.Content = new HomePage();
             }
             catch (Exception ex)
             {

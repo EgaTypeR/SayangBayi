@@ -11,11 +11,11 @@ using SayangBayi;
 
 namespace SayangBayi.Classes
 {
-    internal class User
+    public class User
     {
         public int userId { get; set; }
         protected string username { get; set; }
-        protected string name { get; set; }
+        public string name { get; set; }
         protected string password { get; set; }
         protected string email { get; set; }
         // Constructor
@@ -85,22 +85,27 @@ namespace SayangBayi.Classes
             try
             {
                 connection.OpenConnection();
-                using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT COUNT(*) FROM users WHERE username= @username AND user_pass= @password", connection.GetConnection()))
+                using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM users WHERE username= @username AND user_pass= @password", connection.GetConnection()))
                 {
                     cmd.Parameters.AddWithValue("@username", this.username);
                     cmd.Parameters.AddWithValue("@password", this.password);
 
-                    int userCount = Convert.ToInt32(cmd.ExecuteScalar());
-
-                    if (userCount > 0)
+                    using (NpgsqlDataReader reader = cmd.ExecuteReader())
                     {
-                        // Login successful
-                        return true;
-                    }
-                    else
-                    {
-                        // Login failed
-                        return false;
+                        if (reader.Read())
+                        {
+                            // User found, populate the User object
+                            this.userId = Convert.ToInt32(reader["user_id"]);
+                            this.name = reader["name"].ToString();
+                            
+                            // Login successful
+                            return true;
+                        }
+                        else
+                        {
+                            // Login failed
+                            return false;
+                        }
                     }
                 }
             }

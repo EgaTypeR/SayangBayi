@@ -9,7 +9,14 @@
       Title="Dashboard">
 
     <Viewbox>
-        <Grid Background="White">
+        <Grid Background="#FFC8E1FF">
+            
+
+            <Border Background="White" BorderBrush="Black" BorderThickness="1"
+        HorizontalAlignment="Left" Height="389" VerticalAlignment="Center" Width="382">
+                <!-- Content of the border -->
+            </Border>
+
             <Label x:Name="lblName" Content="Nama Bayi" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="36" FontWeight="Bold" FontFamily="Century Gothic" Margin="56,0,0,291"/>
             <Label Content="Age" Margin="59,126,535,224" FontSize="20" FontWeight="Bold"/>
             <Label Content="Weight" Margin="59,183,517,168" FontSize="20" FontWeight="Bold"/>
@@ -19,7 +26,6 @@
             <Label x:Name="lblWeight" Content="4.6 Kg" HorizontalAlignment="Left" Margin="218,181,0,0" VerticalAlignment="Top" FontSize="20"/>
             <Label x:Name="lblHeight" Content="45 cm" HorizontalAlignment="Left" Margin="218,232,0,0" VerticalAlignment="Top" FontSize="20"/>
             <Label x:Name="lblSleepTime" Content="13 Hours" HorizontalAlignment="Left" Margin="218,286,0,0" VerticalAlignment="Top" FontSize="20"/>
-            <Grid HorizontalAlignment="Left" Height="388" Margin="369,0,0,0" VerticalAlignment="Center" Width="286" Background="#FFC8E1FF"/>
 
         </Grid>
     </Viewbox>
