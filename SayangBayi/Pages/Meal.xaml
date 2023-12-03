@@ -10,9 +10,10 @@
       Title="Meal">
 
     <Viewbox>
-        <Grid Background="White">
-            <Label Content="Meals" FontWeight="Bold" Margin="28,10,250,157" FontSize="16"/>
-            <DataGrid x:Name="DGMeal" d:ItemsSource="{d:SampleData ItemCount=5}" HorizontalAlignment="Center" Width="277" Height="134" VerticalAlignment="Top" Margin="0,41,0,0"/>
+        <Grid x:Name="BtnView" Background="White">
+            <Label Content="Meals" FontWeight="Bold" Margin="28,18,250,149" FontSize="16"/>
+            <DataGrid x:Name="DGMeal" d:ItemsSource="{d:SampleData ItemCount=5}" HorizontalAlignment="Center" Width="277" Height="127" VerticalAlignment="Top" Margin="0,61,0,0" FontSize="8" GridLinesVisibility="Horizontal" BorderThickness="1" MaxColumnWidth="100"/>
+            <Button Content="View" HorizontalAlignment="Left" Height="14" Margin="243,42,0,0" VerticalAlignment="Top" Width="62" FontSize="9"/>
 
         </Grid>
     </Viewbox>

@@ -17,6 +17,15 @@
         </Setter>
     </Style>
 
-    
+    <Style TargetType="ScrollBar">
+        <Setter Property="Width" Value="10"/>
+        <!-- Set the width of the scrollbar -->
+        <Setter Property="Height" Value="Auto"/>
+    </Style>
+
+
+
 
 </ResourceDictionary>
+    
+

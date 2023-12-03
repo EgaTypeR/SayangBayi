@@ -9,8 +9,10 @@
       Title="Article">
     <Viewbox>
         <Grid Background="White">
-            <Label Content="Articles" FontWeight="Bold" Margin="28,10,250,157" FontSize="16"/>
-            <DataGrid x:Name="DGArticle" d:ItemsSource="{d:SampleData ItemCount=5}" HorizontalAlignment="Left" Width="292" Height="127" VerticalAlignment="Top" Margin="28,46,0,0" SelectionMode="Single"/>
+            <Label Content="Articles" FontWeight="Bold" Margin="28,18,250,149" FontSize="16"/>
+            <DataGrid x:Name="DGArticle" d:ItemsSource="{d:SampleData ItemCount=5}" HorizontalAlignment="Left" Width="292" Height="127" VerticalAlignment="Top" Margin="28,61,0,0" SelectionMode="Single" FontSize="8" GridLinesVisibility="Horizontal" MaxColumnWidth="100" BorderThickness="1"/>
+            <Button Content="View" HorizontalAlignment="Left" Height="14" Margin="258,42,0,0" VerticalAlignment="Top" Width="62" FontSize="9"/>
+
 
         </Grid>
     </Viewbox>

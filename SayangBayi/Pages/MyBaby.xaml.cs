@@ -68,7 +68,7 @@ namespace SayangBayi.Pages
                 //default sex
                 baby.Sex = "Boy";
                 
-                if (check.UserId != 0)
+                if (check.UserId == 0)
                 {
                     baby.CreateBaby(user);
                 }
