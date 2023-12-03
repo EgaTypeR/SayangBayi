@@ -10,7 +10,7 @@
 
     <Viewbox>
         <Grid Background="#FFC8E1FF">
-            
+
 
             <Border Background="White" BorderBrush="Black" BorderThickness="1"
         HorizontalAlignment="Left" Height="389" VerticalAlignment="Center" Width="382">
@@ -22,11 +22,15 @@
             <Label Content="Weight" Margin="59,183,517,168" FontSize="20" FontWeight="Bold"/>
             <Label Content="Height" Margin="58,235,522,116" FontSize="20" FontWeight="Bold"/>
             <Label Content="Sleep Time" Margin="59,286,483,64" FontSize="20" FontWeight="Bold"/>
-            <Label x:Name="lblAge" Content="13 Months" HorizontalAlignment="Left" Margin="218,126,0,0" VerticalAlignment="Top" FontSize="20"/>
-            <Label x:Name="lblWeight" Content="4.6 Kg" HorizontalAlignment="Left" Margin="218,181,0,0" VerticalAlignment="Top" FontSize="20"/>
-            <Label x:Name="lblHeight" Content="45 cm" HorizontalAlignment="Left" Margin="218,232,0,0" VerticalAlignment="Top" FontSize="20"/>
-            <Label x:Name="lblSleepTime" Content="13 Hours" HorizontalAlignment="Left" Margin="218,286,0,0" VerticalAlignment="Top" FontSize="20"/>
+            <Label x:Name="lblAge" Content="13" HorizontalAlignment="Left" Margin="218,126,0,0" VerticalAlignment="Top" FontSize="20"/>
+            <Label x:Name="lblWeight" Content="4.6" HorizontalAlignment="Left" Margin="218,181,0,0" VerticalAlignment="Top" FontSize="20"/>
+            <Label x:Name="lblHeight" Content="45" HorizontalAlignment="Left" Margin="218,232,0,0" VerticalAlignment="Top" FontSize="20"/>
+            <Label x:Name="lblSleepTime" Content="13" HorizontalAlignment="Left" Margin="218,286,0,0" VerticalAlignment="Top" FontSize="20"/>
 
+            <Label Content="Months" HorizontalAlignment="Left" Margin="270,130,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="20"/>
+            <Label Content="Kg" HorizontalAlignment="Left" Margin="273,185,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="20"/>
+            <Label Content="cm" HorizontalAlignment="Left" Margin="273,237,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="20"/>
+            <Label Content="Hours" HorizontalAlignment="Left" Margin="273,290,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="20"/>
         </Grid>
     </Viewbox>
 

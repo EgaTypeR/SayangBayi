@@ -70,7 +70,7 @@ namespace SayangBayi
 
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
-            User userLogin = new User(usernameTBox.Text, passwordTBox.Text);
+            User userLogin = new User(usernameTBox.Text, passwordBox.Password);
 
             try
             {
